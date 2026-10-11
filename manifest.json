@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Quick Snip",
+  "version": "1.0.0",
+  "description": "Press a hotkey, drag a rectangle, and copy a webpage screenshot to your clipboard.",
+  "minimum_chrome_version": "109",
+  "permissions": ["activeTab", "scripting", "clipboardWrite"],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_title": "Quick Snip — select and copy" },
+  "commands": {
+    "snip": {
+      "suggested_key": { "default": "Ctrl+Shift+S", "mac": "Command+Shift+S" },
+      "description": "Select a webpage area and copy it"
+    }
+  },
+  "web_accessible_resources": [{ "resources": ["selector.html"], "matches": ["<all_urls>"] }]
+}
